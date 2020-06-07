@@ -1,0 +1,30 @@
+body{
+    background-color: blanchedalmond;
+    margin: 10%;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+button{
+    color: white;
+    background-color: blue;
+    font-size: larger;
+    padding: 1%;
+    margin: 2%;
+    
+}
+h1{
+    color: blue;
+    font-size: 250%;
+    font-weight: bold;
+
+}
+p{
+    font-size: larger;
+    font-weight: bold;
+}
+a{
+    color: white;
+
+}
