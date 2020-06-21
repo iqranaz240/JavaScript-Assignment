@@ -2,7 +2,6 @@
 
 //I have done this assignment in the form of an application, therefore you can see each task in the form of function because
 //I call these function on button click of html page buttons.
-
 /////////////////////////////// Chapter 1 ////////////////////////////////////////
 
 function task1_1(){
@@ -822,16 +821,20 @@ function task17_7(){
     var a = ['cake', 'apple pie', 'cookie', 'chips', 'patties'];
     var b = prompt ('Welcome to ABC Bakery. What do you want to order Sir/Ma'+"'"+'am');
     var i;
+    var flag = 0
     for (i=0; i<a.length; i++){
         if (a[i] === b){
-            document.write(b+ 'availabe at index '+i+ ' of our bakery.');
-            break;
+            flag += 1
+            break
         }
-        else {
+    }
+            if (flag === 1){
+            document.write(b+ ' is availabe at index '+i+ ' of our bakery.');
+        }
+        else{
             document.write ('We are Sorry. '+b+' is not available at our bakery.')
     }
-}
-}
+    }
 
 function task17_8(){
     var a = [24, 53, 78, 91, 12];
@@ -866,4 +869,534 @@ function task17_10(){
     for (i=1; i<=20; i++){
         document.write(5*i +', ');
     }
+}
+
+//////////////////////////////////////////// Chapter 21-25 ////////////////////////////////////////////////////
+
+function task21_1(){
+var fname = prompt('Enter your first name: ')
+var lname = prompt('Enter your second name: ')
+var fullname = fname +' '+ lname
+alert('Hi, ' + fullname)
+}
+
+function task21_2(){
+    var mob = prompt('Enter your favorite mobile phone model: ')
+    document.write('Your favorite phone is: ' + mob+'<br>'+ 'Length of string: '+ mob.length)
+}
+
+function task21_3(){
+    var str = 'Pakistani';
+     for (var i = 0; i < str.length; i++) {
+         if (str.slice(i, i+1) === "n") {
+              document.write("String: " + str + "<br>" + "Index of 'n': " + i); 
+                break;
+          }
+       }
+}
+
+function task21_4(){
+    var str = 'Hello world';
+    var ind = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.slice(i, i+1) === "l") {
+         ind = i;
+        }
+      }
+      document.write("String: " + str + "<br>" + "Index of 'l': " + ind);  
+}
+
+function task21_5(){
+    var str = 'Pakistani';
+    var ind = 3;
+    var st = str.charAt(3)
+      document.write("String: " + str + "<br>" + " Character at index 3: " + st);  
+}
+
+function task21_6(){
+    var fname = prompt('Enter your first name: ')
+    var lname = prompt('Enter your second name: ')
+    var fullname = fname.concat(lname) 
+    alert('Hi, ' + fullname)
+}
+
+function task21_7(){
+    var text = 'Hyderabad';
+    var rep = text.replace('Hyder', 'Islam');
+    document.write('City: ' + text + '<br>' + 'After Replacement: ' + rep );
+}
+
+function task21_8(){
+    var message = 'Ali and Sami are best friends. They play cricket and football together.'
+    for (var i = 0; i < message.length; i++) {
+         if (message.slice(i, i +3) === 'and') {
+         message = message.slice(0, i) + "&" + message.slice(i+3);
+         }
+         }
+    document.write(message);
+}
+
+function task21_9(){
+    var val = '472';
+    var num = parseInt(val)
+    var type_val = typeof(val)
+    var type_num = typeof(num)
+    document.write('Value: ' + val + '<br>' + 'Type: ' + type_val + '<br>' + 'Value: ' + num + '<br>' + 'Type: ' + type_num)
+}
+
+function task21_10(){
+    var inp = prompt('Enter any word: ')
+    var cap = inp.toUpperCase()
+    document.write('User Input: ' + inp + '<br>' + 'Upper case: ' + cap) 
+}
+
+function task21_11(){
+    var inp = prompt('Enter any word: ')
+    var cap = inp.charAt(0).toUpperCase() + inp.slice(1).toLowerCase()
+    document.write('User Input: ' + inp + '<br>' + 'Title Case: ' + cap) 
+}
+
+function task21_12(){
+    var num = 35.36
+    var str = num.toString()
+    var st = str.replace('.', '')
+    document.write('Number: ' + num + '<br>' + 'String: ' + st )
+}
+
+function task21_13(){
+    var ch = 0
+    var name = prompt('Enter Username: ')
+    for (i=0; i<name.length; i++){
+        if (name.codePointAt(i) === 33 || name.codePointAt(i) === 44 || name.codePointAt(i) === 46 || name.codePointAt(i) === 64){
+           ch +=1
+        }
+    }
+        if (ch === 1){
+            alert('Please enter a valid username.')
+        }
+        else{}
+}
+
+function task21_14(){
+    var a = ['cake', 'apple pie', 'cookie', 'chips', 'patties']
+    var c = prompt("Welcome to ABC bakery. What do you want to order Sir/Ma'am: ")
+    var b = c.toLowerCase()
+    var flag = 0
+    for (i=0; i<a.length; i++){
+        if (a[i] === b){
+        flag+=1
+        break
+    }
+}
+    if(flag === 1){
+            document.write(b+ ' is availabe at index '+i+ ' of our bakery.');
+        }
+        else {
+            document.write ('We are Sorry. '+b+' is not available at our bakery.')
+    }
+}
+
+function task21_15(){
+    var password = prompt('Enter password must be alphanumeric.')
+    if (password.length<6 || (password.codePointAt(0) >48 && password.codePointAt(0) <58 )){
+        alert('Enter valid password.')
+    }
+    else{}
+}
+
+function task21_16(){
+    var university = 'University of Karachi'
+    var arr = university.split("")
+    for (var i = 0; i<arr.length; i++){
+        document.write(arr[i] +'<br>')
+    }
+}
+
+function task21_17(){
+    var input = prompt('Enter anything: ')
+    var last = input.length-1
+    var char = input.charAt(last)
+    document.write('User input: ' + input + '<br>' + 'Last character of input: ' +char)
+}
+
+function task21_18(){
+    var text = 'The quick brown fox jumps over the lazy dog'
+    var inst = 0
+    for (var i = 0; i < text.length; i++) {
+        if (text.slice(i, i +3) === 'the') {
+        inst += 1
+        }
+        else{}
+        }
+        document.write('Text: ' + text + '<br>' + 'There are ' + inst + " occurence of word 'the'")
+}
+
+/////////////////////////////////// Chapter 26-30 ////////////////////////////////////////////
+
+function task26_1(){
+var userInput=+prompt("Enter the number");
+document.write("<br>The number is "+userInput);
+var roundedValue=Math.round(userInput);
+document.write("<br>The rounded  number is "+roundedValue);
+var floorValue=Math.floor(userInput);
+document.write("<br>The floor number is "+floorValue);
+var ceilValue=Math.ceil(userInput);
+document.write("<br>The Ceil of the number is "+ceilValue);
+}
+
+function task26_2(){
+var userInput=+prompt("Enter the number");
+document.write("<br>The number is "+userInput);
+var roundedValue=Math.round(userInput);
+document.write("<br>The rounded  number is "+roundedValue);
+var floorValue=Math.floor(userInput);
+document.write("<br>The floor number is "+floorValue);
+var ceilValue=Math.ceil(userInput);
+document.write("<br>The Ceil of the number is "+ceilValue);
+}
+
+function task26_3(){
+var userInput=+prompt("Enter the number");
+var absValue=Math.abs(userInput);
+document.write("<br>The value after doing the absolute is"+absValue);
+}
+
+function task26_4(){
+var randValue=Math.floor(Math.random() * 6) + 1;
+document.write("<br>The value of the dice is"+randValue);
+}
+
+function task26_5(){
+var randomValue=Math.floor(Math.random()*2)+1;
+if(randomValue===1)
+{
+    document.write("<br>"+randomValue+"<br>"+"Random Coin Value :Tails");
+
+}
+else if(randomValue===2)
+{
+    document.write("<br>"+randomValue+"<br>"+"Random Coin Value :Heads");
+
+}
+}
+
+function task26_6(){
+var randValue=Math.floor(Math.random() * 100) + 1;
+document.write("<br>The random value between 1 and 100 is "+randValue);
+}
+
+function task26_7(){
+var userInput=prompt("Enter your weight!");
+var parsedValue=parseInt(userInput);
+document.write("<br>The weight of the user is "+parsedValue+" Kilograms");
+}
+
+function task26_8(){
+var userInput=+prompt("Enter the secret number");
+var random=Math.floor(Math.random() * 10) + 1;
+if(userInput===random)
+{
+    alert("Congratulations!You are Right");
+}
+else{
+    alert("Try Again!");
+}
+}
+
+///////////////////////////////////////////// Chapter 31-34 //////////////////////////////////////////////////
+
+function task31_1(){
+var currentdate = new Date();
+document.write(currentdate);
+}
+
+function task31_2(){
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var currentdate = new Date();
+var currentmonth = currentdate.getMonth();
+document.write(months[currentmonth]);
+}
+
+function task31_3(){
+var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var currentdate = new Date();
+var currentday = currentdate.getDay();
+document.write("Today is " + days[currentday]);
+}
+
+function task31_4(){
+    var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var currentdate = new Date();
+    var currentday = currentdate.getDay();
+    if( currentday == 0 || currentday == 6){
+        document.write("Today is a funday")
+}
+}
+
+function task31_5(){
+var currentdate = new Date();
+if(currentdate.getDate() <=15){
+    document.write("first fifteen days of the month");
+}else if(currentdate.getDate() <=16){
+    document.write("16th day of the month");
+}else{
+    document.write("last 16 days of the month");
+}
+}
+
+function task31_6(){
+var currentdate = new Date();
+document.write("milliseconds: " + currentdate.getTime())
+var minutes = currentdate.getTime()/(1000*60);
+document.write("minutes" + minutes);
+}
+
+function task31_7(){
+var currentdate = new Date();
+var hour = currentdate.getHours();
+if(hour < 12){
+    document.write("its AM");
+}else{
+    document.write("its PM");
+}
+}
+
+function task31_8(){
+var laterDate = new Date("2020/12/31");
+document.write(laterDate);
+}
+
+function task31_9(){
+var currentdate = new Date();
+var startingdate = new Date("2020/6/18");
+var daysgone = parseInt((currentdate.getTime() - startingdate.getTime())/(1000*60*60*24));
+document.write(daysgone + " days have passed since ramazan 1st")
+}
+
+function task31_10(){
+var currentdate = new Date();
+var startingdate = new Date("2015/1/1");
+var daysgone = parseInt((currentdate.getTime() - startingdate.getTime())/(1000*60));
+document.write(daysgone + " seconds have passed since 2015")
+}
+
+function task31_11(){
+var currentdate = new Date();
+document.write("current date" + currentdate)
+var hourago = new Date( currentdate.getTime() - (1000* 60 *60));
+document.write("an hour ago it was " + hourago)
+}
+
+function task31_12(){
+var currentdate = new Date();
+document.write("current date" + currentdate)
+var centuryago = new Date( currentdate.getTime() - (1000* 60 * 60 *24 * 365.25 *100));
+document.write("100 years ago it was " + centuryago)
+}
+
+function task31_13(){
+var currentdate = new Date();
+var age =prompt ("enter your age")
+var birthyear = new Date( currentdate.getTime() - (1000* 60 * 60 *24 * 365.25 *age));
+document.write(birthyear.getFullYear());
+}
+
+function task31_14(){
+document.write("customer name : Iqra Naz" + '<br>');
+document.write("Month : May" + '<br>');
+document.write("Number of units : 416" + '<br>');
+document.write("Charges per unit : 16" + '<br>');
+document.write("net amount payable with in due date : " + 416*16  + '<br>');
+document.write("late payment surcharge : 350"  + '<br>');
+document.write("payment after due date : " + ((416*16)+350) );
+}
+
+/////////////////////////////////// Chapter 35-38 ////////////////////////////////////////////
+
+function task35_1(){
+    var date = new Date()
+    document.write(date)
+}
+
+function task35_2(){
+    fname = prompt('Enter your first name: ')
+    lname = prompt('Enter your last name: ')
+    fullname = fname+ ' '+lname
+    prompt('Hi, ' +fullname)
+}
+
+function task35_3(){
+    var num1 = parseInt(prompt('Enter first number: '))
+    var num2 = parseInt(prompt('Enter second number: '))
+    var sum = num1+num2
+    alert('Sum of '+num1 + ' and '+ num2 + ' is '+ sum)
+}
+
+function task35_4(){
+    var num1 = parseInt(prompt('Enter first number: '))
+    var num2 = parseInt(prompt('Enter second number: '))
+    var op = prompt('Enter operation; +, -, *, /')
+    func(num1, num2, op);
+    alert('Sum is: '+sum);
+    function func(num1, num2, op){
+        if (op === '+'){
+            sum = num1+num2
+        }
+        else if(op ==='-'){
+            sum = num1-num2
+        }
+        else if (op=== '*'){
+            sum = num1*num2
+        }
+        else if(op === '/'){
+            sum = num1/num2
+        }
+        else {
+            alert('invalid operation')
+        }
+        return sum
+    }
+}
+
+function task35_5(){
+    var num = prompt('Enter number: ')
+    square(num)
+    alert('Square of ' +num+' is ' +sq)
+    function square(num){
+        sq = num*num
+        return sq
+    }
+  }
+
+  function task35_6(){
+      var num = prompt('Enter number: ')
+      var fac = 1
+      fact(num)
+      alert('Factorial of ' +num+ ' is ' + fac)
+      function fact(num){
+        for(var i = 1; i<=num; i++){
+           fac = fac*i
+        }
+        return fac
+      }
+  } 
+
+function task35_7(){
+    var start = parseInt(prompt('Enter first number: '))
+    var end = parseInt(prompt('Enter last number: '))
+    num (start, end)
+    function num(start, end){
+        for (start; start<=end; start++){
+            document.write(start +'<br>')
+        }
+    }
+}
+
+function task35_8(){
+    var base = prompt("enter base");
+    var perpendicular = prompt("enter perpendicular");
+    function computesquare(num){
+        return Math.pow(num,2);
+    }
+    function compute_hypotenous (){
+        return computesquare(base) + computesquare(perpendicular);
+    }
+     compute_hypotenous();
+} 
+
+function task35_9(){
+    var width = parseInt(prompt('Enter width'))
+    var height = parseInt(prompt('Enter height'))
+    area(width, height)
+    alert('Area: ' +area)
+    function area(width, height){
+        area = width*height
+        return area
+    }
+}
+
+function task35_10(){
+function Palindrome(string)
+{
+    var newString="";
+   for(i=string.length-1;i>=0;i--)
+   {
+     newString+=string[i];
+   }
+   if(string===newString)
+   {
+       document.write("<br>Its a Palindrome");
+   }
+   else
+   {
+       document.write("<br>Its not a Palindrome");
+   }
+}
+Palindrome("madam");
+}
+
+function task35_11(){
+function titleCase(str) { 
+    str = str.toLowerCase().split(' '); 
+    for (var i = 0; i < str.length; i++) { 
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);  
+    } 
+    return str.join(' '); 
+  } 
+  document.write("<br> The String in Title Case is "+titleCase('the quick brown fox')); 
+}
+
+function task35_12(){
+function find_longest_word(str)
+{
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
+
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+    if(result.length < array1[x].length)
+    {
+    result = array1[x];
+    } 
+  }
+  return result;
+}
+document.write("<br>"+find_longest_word('Web Development Tutorial'));
+}
+
+function task35_13(){
+function char_count(str, letter) 
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) == letter) 
+      {
+      letter_Count += 1;
+      }
+  }
+  return letter_Count;
+}
+document.write("<br>The occurence of the letter in the string is "+char_count('Omama','a'));
+}
+
+function task35_14(){
+document.write("<h1>Geometrizer</h1>");
+function calcCircumference(radius)
+{
+    var pi=3.142;
+    var circumference;
+    circumference=2*pi*radius;
+    return circumference;
+}
+document.write("<br>The Circumference of the Circle is "+calcCircumference(5));
+
+function calcArea(radius)
+{
+    var pi=3.142;
+    var Area;
+    Area=pi*radius*radius;
+    return Area;
+}
+document.write("<br>The Area  of the Circle is "+calcArea(5));
 }
